@@ -1,8 +1,13 @@
+import { useState } from "react";
+
 function App() {
-  let count = 100;
+  let [count, setCount] = useState(100);
+
   let increment = () => {
     count = count + 1;
-    console.log(count);
+    //console.log(count);
+
+    setCount(count);
   };
 
   return (
