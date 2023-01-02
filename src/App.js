@@ -1,20 +1,24 @@
 import { useState } from "react";
 
 function App() {
-  let [count, setCount] = useState(100);
+  let str1 = "Home";
+  let str2 = "Explore";
+  let str3 = "Notification";
 
-  let increment = () => {
-    count = count + 1;
-    //console.log(count);
+  let [city, setCity] = useState("Mumbai");
+  let changeCity = () => {
+    city = `Hello` + city;
 
-    setCount(count);
+    setCity(city);
   };
 
   return (
     <div>
-      <h1>Counter Application</h1>
-      <h1>{count}</h1>
-      <input type="button" value="Increment" onClick={increment} />
+      <h1>{str1}</h1>
+      <h1>{str2}</h1>
+      <h1>{str3}</h1>
+      <h1>{city}</h1>
+      <input type="button" value="Change City" onClick={changeCity} />
     </div>
   );
 }
