@@ -1,58 +1,26 @@
 import { useState } from "react";
 
 function App() {
-  let [list] = useState([1, 1, 1, 1]);
-  let [theme, setTheme] = useState("Primary");
-
-  let primaryTheme = () => {
-    theme = "primary";
-
-    setTheme(theme);
+  let clickMe1 = () => {
+    console.log("Hello");
+  };
+  let clickMe2 = (e) => {
+    console.log(e);
   };
 
-  let successTheme = () => {
-    theme = "success";
-
-    setTheme(theme);
-  };
-
-  let dangerTheme = () => {
-    theme = "danger";
-
-    setTheme(theme);
+  let clickMe3 = (p1) => {
+    console.log(p1);
   };
   return (
     <div>
-      <div className="sticky-top">
-        <h1 className={`bg-${theme} text-dark p-3`}>BootStrap Styling</h1>
-        <input
-          className="btn btn-primary"
-          type="button"
-          value="Primary Theme"
-          onClick={primaryTheme}
-        />
-        <input
-          className="btn btn-success"
-          type="button"
-          value="Success Theme"
-          onClick={successTheme}
-        />
-        <input
-          className="btn btn-danger"
-          type="button"
-          value="Danger Theme"
-          onClick={dangerTheme}
-        />
-      </div>
-
-      {list.map((item) => (
-        <div className={`alert alert-${theme} my-1`}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          unde dolore corporis enim nobis nostrum officiis ab obcaecati? Odit
-          dolorem soluta commodi, aperiam repellat dolores sunt numquam? Ut,
-          ipsa aspernatur!
-        </div>
-      ))}
+      <h1>Btn Click Demo</h1>
+      <input type="button" value="Click Me1" onClick={clickMe1} />
+      <input type="button" value="Click Me2" onClick={clickMe2} />
+      <input
+        type="button"
+        value="Click Me3"
+        onClick={() => clickMe3("primary")}
+      />
     </div>
   );
 }
