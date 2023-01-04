@@ -1,26 +1,18 @@
 import { useState } from "react";
 
 function App() {
-  let clickMe1 = () => {
-    console.log("Hello");
-  };
-  let clickMe2 = (e) => {
-    console.log(e);
+  let [message, setMessage] = useState("Abc");
+  let changeMessage = (e) => {
+    message = e.target.value;
+
+    setMessage(message);
   };
 
-  let clickMe3 = (p1) => {
-    console.log(p1);
-  };
   return (
     <div>
-      <h1>Btn Click Demo</h1>
-      <input type="button" value="Click Me1" onClick={clickMe1} />
-      <input type="button" value="Click Me2" onClick={clickMe2} />
-      <input
-        type="button"
-        value="Click Me3"
-        onClick={() => clickMe3("primary")}
-      />
+      <h1>Working With Input</h1>
+      <input type="text" value={message} onChange={changeMessage} />
+      <h1>{message}</h1>
     </div>
   );
 }
